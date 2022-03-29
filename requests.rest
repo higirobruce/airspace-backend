@@ -1,0 +1,10 @@
+
+GET http://localhost:3000/users
+
+
+POST http://localhost:3000/users/login
+Content-Type: application/json
+{
+    "email":"bruce@gmail.com",
+    "password": "$2b$10$QzCaKXARMpC7hNphGJIESOGOH4Vgu37EwOfDarByhm3/nYRGFO6ki"
+}
