@@ -42,7 +42,9 @@ const db = mongoose.connection;
 
 db.on("error", (error) => {});
 db.once("open", () => {});
-
+app.get("/", (req, res) => {
+  res.send("Airspace backend");
+});
 app.use("/operators/", operatorsRoute);
 app.use("/aircrafts/", aircraftsRoute);
 app.use("/permits/", permitsRoute);
