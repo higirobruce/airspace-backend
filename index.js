@@ -10,6 +10,7 @@ const aircraftsRoute = require("./routes/aircrafts");
 const permitsRoute = require("./routes/permits");
 const uploadRoute = require("./routes/upload");
 const usersRoute = require("./routes/users");
+const violationRoute = require("./routes/violations");
 
 app.use(cors());
 
@@ -50,6 +51,7 @@ app.use("/aircrafts/", aircraftsRoute);
 app.use("/permits/", permitsRoute);
 app.use("/upload", uploadRoute);
 app.use("/users/", usersRoute);
+app.use("/violations/", violationRoute);
 
 app.get("/file/:folder/:name", function (req, res, next) {
   var folder = req.params.folder;
