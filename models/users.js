@@ -17,7 +17,6 @@ const UserSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
-    default: "agent-user",
   },
   agency: {
     type: String,
