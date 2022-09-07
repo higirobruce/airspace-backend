@@ -48,7 +48,6 @@ router.get("/:id", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   let { email, password } = req.body;
-  console.log(req.body);
   try {
     let user = await userDataModel.model.find({ email: email });
     if (user.length === 0) {
@@ -64,15 +63,6 @@ router.post("/login", async (req, res) => {
 
     if (allowed) {
       if (active) {
-        let token = jwt.sign(
-          {
-            email: user[0].email,
-            agency: user[0].agency,
-            role: user[0].role,
-          },
-          process.env.ACCESS_TOKEN
-        );
-
         res.status(200).send({
           message: "Allowed",
           error: false,
@@ -80,7 +70,6 @@ router.post("/login", async (req, res) => {
           agency: user[0].agency,
           role: user[0].role,
           names: user[0].names.split(" ")[0],
-          token,
         });
       } else {
         res.status(401).send({
