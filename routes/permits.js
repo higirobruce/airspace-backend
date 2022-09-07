@@ -51,6 +51,7 @@ route.post("/", async (req, res) => {
     duration,
     flightRoutes,
     agency,
+    clearanceFees,
   } = req.body;
   try {
     let newPermitData = new permitsDataModel.model({
@@ -66,6 +67,7 @@ route.post("/", async (req, res) => {
       duration,
       flightRoutes,
       agency,
+      clearanceFees,
     });
     let createdPermit = await newPermitData.save();
     res.status(201).send(createdPermit);

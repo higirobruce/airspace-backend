@@ -11,6 +11,9 @@ const permitsRoute = require("./routes/permits");
 const uploadRoute = require("./routes/upload");
 const usersRoute = require("./routes/users");
 const violationRoute = require("./routes/violations");
+const permitTypesRoute = require("./routes/permit_types");
+const clearanceTypesRoute = require("./routes/clearance_types");
+const pricingsRoute = require("./routes/pricings");
 
 app.use(cors());
 
@@ -52,6 +55,9 @@ app.use("/permits/", permitsRoute);
 app.use("/upload", uploadRoute);
 app.use("/users/", usersRoute);
 app.use("/violations/", violationRoute);
+app.use("/permitTypes", permitTypesRoute);
+app.use("/clearanceTypes", clearanceTypesRoute);
+app.use("/pricings", pricingsRoute);
 
 app.get("/file/:folder/:name", function (req, res, next) {
   var folder = req.params.folder;

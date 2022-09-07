@@ -1,10 +1,42 @@
 
-GET http://localhost:3000/users
+GET https://airspace-backend.herokuapp.com/violations
 
-
+###
 POST http://localhost:3000/users/login
+
 Content-Type: application/json
 {
     "email":"bruce@gmail.com",
     "password": "$2b$10$QzCaKXARMpC7hNphGJIESOGOH4Vgu37EwOfDarByhm3/nYRGFO6ki"
+}
+
+###
+POST http://localhost:3000/violations
+
+Content-Type: application/json
+{
+    "aircraft":"aircraft1",
+    "flightType":"VIP",
+    "operator":"Operator1",
+    "registrationNumber":"Reg22322",
+    "mtow":"1000",
+    "homebase":"Rwanda",
+    "pilotNames":"Name Pilote",
+    "pilotLicenseNumber":"RE0009",
+    "entryPoint":"Gatuna",
+    "exitPoint":"Byumba",
+    "entryDate":"01-JAN-2021",
+    "exitDate":"02-JAN-2021"
+}
+
+
+###
+POST http://localhost:3000/pricings
+
+Content-Type: application/json
+{
+    "pricingCode":"SLA",
+    "applicationFee":[
+        {"a":1}
+    ]
 }
