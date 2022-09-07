@@ -48,6 +48,9 @@ const PermitSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  clearanceFees: {
+    type: mongoose.Schema.Types.Decimal128,
+  },
 });
 
 module.exports = {
