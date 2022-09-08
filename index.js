@@ -15,8 +15,6 @@ const permitTypesRoute = require("./routes/permit_types");
 const clearanceTypesRoute = require("./routes/clearance_types");
 const pricingsRoute = require("./routes/pricings");
 
-app.use(cors());
-
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -24,6 +22,9 @@ app.use(
   })
 );
 app.use(express.static(__dirname + "/public"));
+
+app.use(cors());
+
 const { AIRSPACE_DB_USER, AIRSPACE_DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } =
   process.env;
 // mongoose
