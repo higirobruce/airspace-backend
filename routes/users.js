@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   } catch (err) {}
 });
 
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
   let { username, names, role, status, email, agency, password } = req.body;
   try {
     let hashedPassword = await bcrypt.hash(password, 10);
